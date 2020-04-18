@@ -1,7 +1,7 @@
 MgClipboard
 ============
 
-Clipboard middleware for Papermerge DMS [Papermerge DMS](https://github.com/ciur/papermerge).
+Clipboard middleware for [Papermerge DMS](https://github.com/ciur/papermerge).
 Designed as Django reusable app.
 
 ## Installation
