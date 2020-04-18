@@ -4,9 +4,9 @@ MgClipboard
 Clipboard middleware for Papermerge DMS [Papermerge DMS](https://github.com/ciur/papermerge).
 Designed as Django reusable app.
 
-## Usage
+## Installation
 
-Install it::
+Install it using pip::
     
     pip install mgclipboard
 
@@ -14,7 +14,7 @@ Add app to INSTALLED_APPS in settings.py::
 
     INSTALLED_APP = (
     ...
-    'papermerge.clipboard',
+    'mgclipboard',
     ...
     )
 
@@ -22,11 +22,13 @@ Add it to MIDDLEWARE list::
 
     MIDDLEWARE = [
         ...
-        # papermerge.middleware.clipboard must be AFTER
+        # AFTER
         # * django.contrib.sessions.middleware
         # * django.contrib.auth.middleware
-        'papermerge.middleware.clipboard.ClipboardMiddleware'
+        'mgclipboard.middleware.ClipboardMiddleware'
         ...
     ]
+
+mgclipboard.middleware is dependent on django.contrib.sessions and django.contrib.auth middleware. Thus, dependencies must be included first in MIDDLEWARE list.
 
 
