@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="mgclipboard",
-    version="1.0.0",
+    version="0.1.1",
     author="Eugen Ciur",
     author_email="eugen@papermerge.com",
     url="https://github.com/papermerge/mg-clipboard",
@@ -14,7 +14,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="Apache 2.0 License",
-    keywords="Middlware, Django, Papermerge, DMS",
+    keywords="Middleware, Django, Papermerge, DMS",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
