@@ -126,7 +126,7 @@ class Clipboard:
 
 class ClipboardMiddleware:
     """
-    papermerge.middleware.clipboard.ClipboardMiddleware
+    mgclipboard.middleware.ClipboardMiddleware
 
     must be declared AFTER
 
@@ -144,22 +144,6 @@ class ClipboardMiddleware:
 
         request.clipboard.clear()
 
-    * Get cliboard object for currently logged in user:
-
-        request.clipboard.all()
-
-    returns:
-
-        {
-            'nodes': ['node1', 'node2', 'node3'], # <- whole nodes to be pasted
-            'pages': { # <- pages to be pasted (with their docs)
-                'doc_id1': [page1, page2]
-                'doc_id2': [page1]
-            }
-        }
-
-    page1, page2, ... ARE PAGE ORDERs (page1 = 1 => first page)
-
     * Get current nodes in clipboard:
 
         request.clipboard.nodes.all()
@@ -171,7 +155,6 @@ class ClipboardMiddleware:
 
     * Adds node ids into the clipboard. Node is a folder or a document's id:
 
-        request.clipboard.nodes.add(1, 2, 3, 4)
         request.clipboard.nodes.add([1, 2, 3, 4])
 
     * Get pages currently in clipboard (for current user):
@@ -184,22 +167,23 @@ class ClipboardMiddleware:
             'doc_id2': [page1, page2, page3]
         }
 
-        again, page1, page2 etc are page order numbers
+        again, page1, page2 etc are page order numbers, staring
+        with 1.
 
 
     * Adds pages and their documents into the clipboard:
 
         request.clipboard.pages.add(1, [1, 2, 3])
-        request.clipboard.pages.add(1, 1, 2, 3)
 
     first agrument is the document id. Rest of the arguments are
     page order numbers.
 
     Can be written as:
 
-        request.clipboard.pages.add(doc=1, pages=[1, 2, 3])
-        request.clipboard.pages.add(doc=1, page=2)
-
+        request.clipboard.pages.add(
+            doc_id=1,
+            page_nums=[1, 2, 3]
+        )
     """
 
     def __init__(self, get_response):
