@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="mgclipboard",
-    version="0.2.0",
+    version="0.3.0",
     author="Eugen Ciur",
     author_email="eugen@papermerge.com",
     url="https://github.com/papermerge/mg-clipboard",

@@ -13,7 +13,7 @@ class ClipboardPages:
 
     @property
     def clipboard_id(self):
-        return f"{self._user_id}.clipboard.nodes"
+        return f"{self._user_id}.clipboard.pages"
 
     @property
     def pages(self):
